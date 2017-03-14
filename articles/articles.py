@@ -1,0 +1,35 @@
+# Load libraries
+import pandas
+from pandas.tools.plotting import scatter_matrix
+import matplotlib.pyplot as plt
+
+# Load dataset
+url = "billy.csv"
+names = ['score', 'magnitude', 'length']
+dataset = pandas.read_csv(url, names=names)
+
+# shape
+#print(dataset.shape)
+
+# head
+#print(dataset.head(20))
+
+# descriptions
+print(dataset.describe())
+
+#print(dataset.dtypes)
+
+# class distribution
+#print(dataset.groupby('class').size())
+
+# box and whisker plots
+dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+plt.show()
+
+# histograms
+#dataset.hist()
+#plt.show()
+
+# scatter plot matrix
+#scatter_matrix(dataset)
+#plt.show()
